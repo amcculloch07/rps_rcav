@@ -1,0 +1,109 @@
+<head>
+  <title>RockPaperScissors</title>
+  <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" />
+  <script src="/assets/application-25bd6b47ad2ef49757a639cd9dc9d7c4b137f7a0bf03bb8d13757d905d6dfcef.js"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7VnDe5Ig11WKs37UAKrgF44+TFdOtXkChwKQjiDST+vt/it/1OHl2JkGo7NFhvVUm3E2e2vM/aMaFPilH2Wbig==" />
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+</head>
+
+<div class="container">
+<hr>
+<div class="row">
+<div class="col-md-8 col-md-offset-2 col-xs-12">
+<div class="btn-group btn-group-justified">
+
+<a href="http://localhost:3000/rock" class="btn btn-block btn-primary">Play Rock</a>
+<a href="http://localhost:3000/paper" class="btn btn-block btn-info">Play Paper</a>
+<a href="http://localhost:3000/scissors" class="btn btn-block btn-primary">Play Scissors</a>
+
+</div>
+</div>
+</div>
+<hr>
+
+
+<% @moves = ["rock", "paper", "scissors"] %>
+<% @computer_move = @moves.sample %>
+
+<div class="row">
+<div class="col-md-4 col-md-offset-2 col-xs-6">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title text-center">
+        Paper
+      </h2>
+    </div>
+    <div class="panel-body">
+<img src="/assets/images/paper.png" class="img-responsive">
+</div>
+</div>
+</div>
+<div class="col-md-4 col-xs-6">
+<% if @computer_move == "rock" %>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h2 class="panel-title text-center">
+      Rock
+    </h2>
+  </div>
+  <div class="panel-body">
+<img src="/assets/images/rock.png" class="img-responsive">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <div class="well text-center">
+    <h1>
+      <span class="label label-success">
+<%="You won!"%>
+</div>
+</div>
+</div>
+<% elsif @computer_move == "paper" %>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h2 class="panel-title text-center">
+      Paper
+    </h2>
+  </div>
+  <div class="panel-body">
+<img src="/assets/images/paper.png" class="img-responsive">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <div class="well text-center">
+    <h1>
+      <span class="label label-warning">
+<%="You tie!"%>
+</div>
+<% else %>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h2 class="panel-title text-center">
+      Scissors
+    </h2>
+  </div>
+  <div class="panel-body">
+<img src="/assets/images/scissors.png" class="img-responsive">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <div class="well text-center">
+    <h1>
+      <span class="label label-danger">
+<%="You lost!"%>
+</div>
+<% end %>
+</div>
+</div>
+</div>
