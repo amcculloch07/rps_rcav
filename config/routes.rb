@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get("/scissors", { :controller => "game", :action => "user_plays_scissors"})
 end
 
+  #Just making a comment here so I can commit to GitHub 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
